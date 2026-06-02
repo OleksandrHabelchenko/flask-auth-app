@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+</head>
+<body>
+    {% for category, message in get_flashed_messages(with_categories=true) %}
+        {% if category == 'error' %}
+            <p style="color: red;">{{ message }}</p>
+        {% else %}
+            <p style="color: green;">{{ message }}</p>
+        {% endif %}
+    {% endfor %}
+    <h2>Registration</h2>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username"><br><br>
+        <input type="password" name="password" placeholder="Password"><br><br>
+        <button type="submit">Register</button> 
+    </form>
+</body>
+</html>
